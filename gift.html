@@ -9,8 +9,8 @@
       margin: 0;
       padding: 0;
       width: 100vw;
-      height: 100vh;
-      background: linear-gradient(135deg, #ff69b4, #ff1493);
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff4fa3, #ff0f7b, #8f00ff);
       font-family: 'Arial', sans-serif;
       display: flex;
       flex-direction: column;
@@ -18,16 +18,47 @@
       justify-content: center;
       color: white;
       text-align: center;
+      overflow-x: hidden;
+    }
+
+    body::before, body::after {
+      content: "💖";
+      position: fixed;
+      font-size: 3rem;
+      opacity: 0.2;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    body::before {
+      top: 10%;
+      left: 8%;
+    }
+
+    body::after {
+      bottom: 12%;
+      right: 10%;
+      animation-delay: 2s;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.14);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 24px;
+      padding: 30px 24px;
+      max-width: 560px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      font-size: 2.3rem;
+      margin: 0 0 12px;
     }
 
     .heart {
-      font-size: 3rem;
+      font-size: 2.8rem;
       animation: pulse 1s infinite;
+      margin: 10px 0 8px;
     }
 
     @keyframes pulse {
@@ -35,37 +66,46 @@
       50% { transform: scale(1.2); }
     }
 
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
     .gift-message {
-      font-size: 1.5rem;
-      margin-top: 10px;
+      font-size: 1.1rem;
+      margin: 10px 0;
+      line-height: 1.7;
     }
 
     .back-btn {
-      margin-top: 30px;
+      display: inline-block;
+      margin-top: 22px;
       padding: 10px 20px;
-      background-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255,255,255,0.25);
       border: 2px solid white;
-      border-radius: 8px;
+      border-radius: 999px;
       color: white;
       text-decoration: none;
       transition: 0.3s;
     }
 
     .back-btn:hover {
-      background-color: white;
-      color: deeppink;
+      background: white;
+      color: #ff0f7b;
+      transform: translateY(-2px);
     }
   </style>
 </head>
 <body>
-  <h1>انا بحبك يا ميرو</h1>
-  <div class="heart">💗💗💗</div>
-  <p class="gift-message">أنتِ الأجمل، والأغلى، والأحن 💕<br>كل كلمة حب في الدنيا لا تكفيكِ يا ميرو ✨</p>
-  </p>
-  <p class="gift-message">أحبكِ أكثر من كل شيء في هذا العالم 🌍❤️</p>
-  <p class="gift-message">أنتِ نجم في سماء قلبي، ولن أسمح لأي شيء بإطفاء نوركِ ✨</p>
-  <p class="gift-message">أنتِ هديتي التي لا تنتهي، وكل لحظة معكِ هي كنز لا يقدر بثمن 💎</p>
-  <p class="gift-message">أنتِ الحب الذي لا ينتهي، والفرحة التي لا تفارقني 💖</p>
-  <a href="index.html" class="back-btn">⬅️ رجوع</a>
+  <div class="card">
+    <h1>أنا بحبك يا ميرو</h1>
+    <div class="heart">💗💗💗</div>
+    <p class="gift-message">أنتِ الأجمل، والأغلى، والأحن 💕<br>كل كلمة حب في الدنيا لا تكفيكِ يا ميرو ✨</p>
+    <p class="gift-message">أحبكِ أكثر من كل شيء في هذا العالم 🌍❤️</p>
+    <p class="gift-message">أنتِ نجم في سماء قلبي، ولن أسمح لأي شيء بإطفاء نوركِ ✨</p>
+    <p class="gift-message">أنتِ هديتي التي لا تنتهي، وكل لحظة معكِ هي كنز لا يقدر بثمن 💎</p>
+    <p class="gift-message">أنتِ الحب الذي لا ينتهي، والفرحة التي لا تفارقني 💖</p>
+    <a href="index.html" class="back-btn">⬅️ رجوع</a>
+  </div>
 </body>
 </html>
